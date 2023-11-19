@@ -1,0 +1,91 @@
+Yes, I understand that your soft staking system is for NFTs. 
+Soft staking generally refers to the process of holding and staking tokens or assets in a wallet to earn rewards. In the case of NFTs, it could mean holding specific NFTs to earn rewards or benefits.
+
+To get started with coding a smart contract for your soft staking system,
+ we'll need to define some key functionalities and requirements. Here are a few aspects we may consider:
+
+1. Staking: How will users stake their NFTs? Will there be a specific time period or minimum amount required for staking?
+2. Rewards: What rewards will users earn for staking their NFTs? Will it be in the form of additional tokens, access to exclusive features, or other benefits?
+3. Unstaking: How can users unstake their NFTs and claim their rewards? Is there a cooldown period or any conditions for unstaking?
+4. Governance: Will there be a governance mechanism for the staking system, such as voting rights for stakers?
+
+Once we have a clear understanding of your requirements, I can assist you in designing and coding the smart contract. 
+Please provide more details on how you envision your soft staking system to work.
+
+Thank you for providing the reward ratio for the soft staking of the OG CM Collection NFTs. Based on the information you provided, here's how we can implement the reward distribution in the smart contract:
+
+1. Retrieve the rank of the staked NFT:
+   - We'll need to fetch the rank of the staked NFT from the contract address `0x8f2836874DC85B81C2CF0421aF593E6E8d5DffA1`. This can be done using an external API or by interacting with the contract directly.
+
+2. Determine the corresponding reward based on the rank:
+   - Once we have the rank, we can map it to the associated reward token amount using conditional statements in the smart contract code.
+   - Here's an example of how it could look in Solidity:
+
+    ```solidity
+    function calculateReward(uint256 rank) public pure returns (uint256) {
+        if (rank > 8001 && rank <= 10000) {
+            return 10;
+        } else if (rank > 6001 && rank <= 8000) {
+            return 15;
+        } else if (rank > 4001 && rank <= 6000) {
+            return 20;
+        } else if (rank > 3001 && rank <= 4000) {
+            return 25;
+        } else if (rank > 2001 && rank <= 3000) {
+            return 30;
+        } else if (rank > 1001 && rank <= 2000) {
+            return 35;
+        } else if (rank > 501 && rank <= 1000) {
+            return 40;
+        } else if (rank > 101 && rank <= 500) {
+            return 45;
+        } else if (rank > 61 && rank <= 100) {
+            return 50;
+        } else if (rank >= 1 && rank <= 60) {
+            return 80;
+        } else {
+            return 0; // No reward for ranks outside the defined ranges
+        }
+    }
+    ```
+
+   Note: Make sure to adjust the conditions and values based on your specific requirements.
+    Also, consider whether the `calculateReward` function should be internal or external, depending on how it will be used.
+
+This code will allow you to calculate the reward amount based on the given rank of the staked NFT. 
+Let me know if you need help with any further steps or if you have additional requirements.
+this is the third thing thee client sent 3) HunterZ collection:
+Contract Address: 0xDdEAaE0e4A009411e32A46645AE4787550fDc804
+Rank 3k - 2.2k --> 10 tokens
+Rank 2199 - 1500 --> 15 tokens
+Rank 1499 - 1000 --> 20 tokens
+Rank 999 - 500 --> 25 tokens
+Rank 499 - 150 --> 30 tokens
+Rank 149 - 31 --> 40 tokens
+Rank 30 - 1 --> 50 tokens
+Soft staking token reward can be claimed daily or be accumulated
+B) For the hard staking (NFT leaves owners wallet and is locked in the contract).
+Can be unlocked at any time (no fixed period).
+Please apply an x3 multiplier based on the soft staking.
+Daily claims possible or can be accumulated.
+Thank you for providing the details. Based on the information you provided, it seems like you would like to implement a staking mechanism for a collection of NFTs called "HunterZ". Here is a breakdown of the requirements for the staking mechanism:
+
+1. Soft Staking:
+- Users can stake their NFTs from the HunterZ collection.
+- The staking rewards are based on the user's rank within a specified range.
+- The reward structure for each rank range is as follows:
+  - Rank 3,000 - 2,201: 10 tokens
+  - Rank 2,200 - 1,500: 15 tokens
+  - Rank 1,499 - 1,000: 20 tokens
+  - Rank 999 - 500: 25 tokens
+  - Rank 499 - 150: 30 tokens
+  - Rank 149 - 31: 40 tokens
+  - Rank 30 - 1: 50 tokens
+- Users can choose to claim their soft staking rewards daily or accumulate them.
+2. Hard Staking:
+- Users can lock their NFTs from the HunterZ collection in the contract.
+- There is no fixed period for the lock, and users can unlock their NFTs at any time.
+- A 3x multiplier should be applied to the rewards earned through soft staking for users who choose hard staking.
+- Similar to soft staking, users can choose to claim their rewards daily or accumulate them.
+Based on the above requirements, you would need to implement a smart contract that handles the staking logic for the HunterZ collection. 
+ you have specific questions or need assistance with the implementation details, please let me know.
